@@ -15,4 +15,4 @@ ENV PORT=8080
 # [關鍵修改] 
 # 1. 將 main:app 改為 app:app (因為你的檔名是 app.py，程式變數也是 app)
 # 2. 移除 exec (在某些 shell 環境下比較穩定，雖非必要但建議)
-CMD gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
